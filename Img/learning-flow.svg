@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+<rect width="1200" height="320" fill="#eef3e6"/>
+<circle cx="165" cy="160" r="86" fill="#556B2F" opacity=".14"/>
+<circle cx="165" cy="160" r="52" fill="#556B2F" opacity=".35"/>
+<circle cx="165" cy="160" r="18" fill="#556B2F"/>
+<path d="M260 160H1030" stroke="#556B2F" stroke-width="4" stroke-dasharray="13 10" opacity=".55"/>
+<g fill="#556B2F"><circle cx="410" cy="160" r="11"/><circle cx="610" cy="160" r="11"/><circle cx="810" cy="160" r="11"/><circle cx="1010" cy="160" r="11"/></g>
+<text x="110" y="285" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#556B2F">NLP → Deep Learning → Transformer → RAG → Fine-tuning</text>
+</svg>

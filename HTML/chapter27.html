@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>질의 응답(QA) - LLM 이전 | NLP 학습노트</title><link rel="stylesheet" href="../CSS/style.css"></head>
+<body>
+<header class="topbar">
+ <button class="menu-btn" aria-label="목차 열기">☰</button>
+ <a class="logo" href="../index.html">NLP & LLM<small>WIKIDOCS 2155 LEARNING NOTES</small></a>
+ <div class="top-meta">CHAPTER 27</div>
+</header>
+<div class="shell">
+ <aside class="left">
+   <h3>CONTENTS</h3><input id="menuSearch" class="search" type="search" placeholder="목차 검색">
+   <nav class="mainnav"><a href="chapter01.html" data-search="01 자연어 처리 준비하기"><span>01</span>자연어 처리 준비하기</a>
+<a href="chapter02.html" data-search="02 텍스트 전처리(Text preprocessing)"><span>02</span>텍스트 전처리(Text preprocessing)</a>
+<a href="chapter03.html" data-search="03 언어 모델(Language Model)"><span>03</span>언어 모델(Language Model)</a>
+<a href="chapter04.html" data-search="04 카운트 기반의 단어 표현"><span>04</span>카운트 기반의 단어 표현</a>
+<a href="chapter05.html" data-search="05 벡터의 유사도(Vector Similarity)"><span>05</span>벡터의 유사도(Vector Similarity)</a>
+<a href="chapter06.html" data-search="06 머신 러닝(Machine Learning) 개요"><span>06</span>머신 러닝(Machine Learning) 개요</a>
+<a href="chapter07.html" data-search="07 딥 러닝(Deep Learning) 개요"><span>07</span>딥 러닝(Deep Learning) 개요</a>
+<a href="chapter08.html" data-search="08 순환 신경망(Recurrent Neural Network)"><span>08</span>순환 신경망(Recurrent Neural Network)</a>
+<a href="chapter09.html" data-search="09 워드 임베딩(Word Embedding)"><span>09</span>워드 임베딩(Word Embedding)</a>
+<a href="chapter10.html" data-search="10 RNN을 이용한 텍스트 분류(Text Classification)"><span>10</span>RNN을 이용한 텍스트 분류(Text Classification)</a>
+<a href="chapter11.html" data-search="11 NLP를 위한 합성곱 신경망(CNN)"><span>11</span>NLP를 위한 합성곱 신경망(CNN)</a>
+<a href="chapter12.html" data-search="12 태깅 작업(Tagging Task)"><span>12</span>태깅 작업(Tagging Task)</a>
+<a href="chapter13.html" data-search="13 서브워드 토크나이저(Subword Tokenizer)"><span>13</span>서브워드 토크나이저(Subword Tokenizer)</a>
+<a href="chapter14.html" data-search="14 RNN을 이용한 인코더-디코더"><span>14</span>RNN을 이용한 인코더-디코더</a>
+<a href="chapter15.html" data-search="15 어텐션 메커니즘(Attention Mechanism)"><span>15</span>어텐션 메커니즘(Attention Mechanism)</a>
+<a href="chapter16.html" data-search="16 트랜스포머(Transformer)"><span>16</span>트랜스포머(Transformer)</a>
+<a href="chapter17.html" data-search="17 BERT"><span>17</span>BERT</a>
+<a href="chapter18.html" data-search="18 실전! BERT 실습하기"><span>18</span>실전! BERT 실습하기</a>
+<a href="chapter19.html" data-search="19 GPT(Generative Pre-trained Transformer)"><span>19</span>GPT(Generative Pre-trained Transformer)</a>
+<a href="chapter20.html" data-search="20 사전 훈련된 인코더-디코더 모델"><span>20</span>사전 훈련된 인코더-디코더 모델</a>
+<a href="chapter21.html" data-search="21 GPT-4 API 시작하기"><span>21</span>GPT-4 API 시작하기</a>
+<a href="chapter22.html" data-search="22 랭체인을 이용한 RAG 시작하기"><span>22</span>랭체인을 이용한 RAG 시작하기</a>
+<a href="chapter23.html" data-search="23 RAG 성능을 올리는 기술"><span>23</span>RAG 성능을 올리는 기술</a>
+<a href="chapter24.html" data-search="24 LLM 파인튜닝(LLM Fine-tuning)"><span>24</span>LLM 파인튜닝(LLM Fine-tuning)</a>
+<a href="chapter25.html" data-search="25 VLM 파인튜닝(멀티모달 파인튜닝)"><span>25</span>VLM 파인튜닝(멀티모달 파인튜닝)</a>
+<a href="chapter26.html" data-search="26 토픽 모델링(Topic Modeling)"><span>26</span>토픽 모델링(Topic Modeling)</a>
+<a href="chapter27.html" class="active" data-search="27 질의 응답(QA) - LLM 이전"><span>27</span>질의 응답(QA) - LLM 이전</a>
+<a href="chapter28.html" data-search="28 텍스트 요약(Text Summarization) - LLM 이전"><span>28</span>텍스트 요약(Text Summarization) - LLM 이전</a></nav>
+   <div class="left-foot"><a href="../index.html">홈으로</a><br><a href="https://wikidocs.net/book/2155" target="_blank" rel="noopener">WikiDocs 원문</a></div>
+ </aside>
+ <main class="content">
+   <section class="hero"><span class="eyebrow">CHAPTER 27</span><h1>질의 응답(QA) - LLM 이전</h1><p>LLM 이전에 사용되던 메모리 네트워크 기반 질의응답 구조를 이해합니다.</p>
+   <div class="notice">이 페이지의 설명은 원문 전체 복제가 아니라 공개 목차를 기반으로 학습 목적에 맞게 재서술한 요약입니다. 예제 코드와 원문의 상세 설명은 WikiDocs에서 확인합니다.</div></section>
+   <section class="section" id="27-01">
+          <span class="eyebrow">27-01</span>
+          <h2>메모리 네트워크(Memory Network, MemN)를 이용한 QA</h2>
+          <p class="concept">외부 메모리 구조에 사실 정보를 저장하고 질문과 관련된 메모리를 반복적으로 조회해 답을 예측하는 질의응답 모델입니다.</p>
+          <div class="keybox"><b>학습 포인트</b><span>개념 정의 → 작동 원리 → 장단점 → 실제 NLP/LLM 적용 위치의 순서로 이해하면 좋습니다.</span></div>
+        </section><section class="section" id="27-02">
+          <span class="eyebrow">27-02</span>
+          <h2>MemN으로 한국어 QA 해보기</h2>
+          <p class="concept">외부 메모리 구조에 사실 정보를 저장하고 질문과 관련된 메모리를 반복적으로 조회해 답을 예측하는 질의응답 모델입니다.</p>
+          <div class="keybox"><b>학습 포인트</b><span>개념 정의 → 작동 원리 → 장단점 → 실제 NLP/LLM 적용 위치의 순서로 이해하면 좋습니다.</span></div>
+        </section>
+   <nav class="pager"><a href="chapter26.html">← 토픽 모델링(Topic Modeling)</a><a href="chapter28.html">텍스트 요약(Text Summarization) - LLM 이전 →</a></nav>
+   <footer class="footer"><p>Source: WikiDocs Book 2155</p><p>Point Color: DarkOliveGreen #556B2F</p></footer>
+ </main>
+ <aside class="right"><h4>이 장의 부메뉴</h4><nav class="subnav"><a href="#27-01">27-01 메모리 네트워크(Memory Network, MemN)를 이용한 QA</a><a href="#27-02">27-02 MemN으로 한국어 QA 해보기</a></nav></aside>
+</div>
+<script src="../JavaScript/app.js"></script>
+</body></html>
