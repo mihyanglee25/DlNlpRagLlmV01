@@ -1,109 +1,145 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>딥 러닝을 이용한 자연어 처리 입문 | 학습노트</title>
-<link rel="stylesheet" href="CSS/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>딥 러닝을 이용한 자연어 처리 입문 | 학습노트</title>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
-<header class="index-top"><strong>NLP · LLM Learning Notes</strong></header>
-<main class="index-wrap">
- <section class="index-hero">
-   <span class="eyebrow">STATIC LEARNING SITE · WikiDocs Book 2155</span>
-   <h1>딥 러닝을 이용한<br>자연어 처리 입문</h1>
-   <p>자연어 처리 기초부터 딥러닝, Transformer, BERT·GPT, RAG, LLM/VLM 파인튜닝까지 학습 흐름을 장별·절별로 탐색할 수 있도록 재구성한 정적 웹사이트입니다.</p>
-   <div class="hero-tags"><span class="tag">Point #556B2F</span><span class="tag">28 Chapters</span><span class="tag">Left Main Menu</span><span class="tag">Right Sub Menu</span></div>
-   <img src="Img/learning-flow.svg" alt="NLP 학습 흐름" style="width:100%;margin-top:30px;border-radius:12px">
- </section>
- <section style="margin-top:44px"><span class="eyebrow">CONTENTS</span><h2 style="font-size:28px;margin:6px 0">전체 장</h2>
- <div class="index-grid"><a class="card" href="HTML/chapter01.html">
-      <b>CHAPTER 01</b><h3>자연어 처리 준비하기</h3>
-      <p>NLP 실습에 필요한 개발 환경과 데이터 처리 도구를 준비하는 장입니다.</p>
-    </a><a class="card" href="HTML/chapter02.html">
-      <b>CHAPTER 02</b><h3>텍스트 전처리(Text preprocessing)</h3>
-      <p>문장을 모델이 처리할 수 있는 입력으로 바꾸기 위한 전처리 기법을 정리합니다.</p>
-    </a><a class="card" href="HTML/chapter03.html">
-      <b>CHAPTER 03</b><h3>언어 모델(Language Model)</h3>
-      <p>문장의 확률을 계산하고 다음 단어를 예측하는 전통적 언어 모델의 원리를 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter04.html">
-      <b>CHAPTER 04</b><h3>카운트 기반의 단어 표현</h3>
-      <p>단어 출현 빈도를 기반으로 텍스트를 벡터화하는 대표적인 방법을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter05.html">
-      <b>CHAPTER 05</b><h3>벡터의 유사도(Vector Similarity)</h3>
-      <p>문서나 단어 벡터 간의 가까움과 차이를 수치로 측정하는 방법을 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter06.html">
-      <b>CHAPTER 06</b><h3>머신 러닝(Machine Learning) 개요</h3>
-      <p>NLP에 필요한 지도학습, 회귀, 분류, 벡터·행렬 연산의 기초를 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter07.html">
-      <b>CHAPTER 07</b><h3>딥 러닝(Deep Learning) 개요</h3>
-      <p>신경망의 구조와 학습 원리, 역전파, 과적합 방지 방법을 이해하는 장입니다.</p>
-    </a><a class="card" href="HTML/chapter08.html">
-      <b>CHAPTER 08</b><h3>순환 신경망(Recurrent Neural Network)</h3>
-      <p>순차 데이터 처리를 위한 RNN, LSTM, GRU 구조와 텍스트 생성을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter09.html">
-      <b>CHAPTER 09</b><h3>워드 임베딩(Word Embedding)</h3>
-      <p>단어 의미를 밀집 벡터로 표현하는 Word2Vec, GloVe, FastText 등 임베딩 기법을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter10.html">
-      <b>CHAPTER 10</b><h3>RNN을 이용한 텍스트 분류(Text Classification)</h3>
-      <p>RNN 계열 모델을 실제 텍스트 분류 문제에 적용하는 방법을 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter11.html">
-      <b>CHAPTER 11</b><h3>NLP를 위한 합성곱 신경망(CNN)</h3>
-      <p>CNN의 지역 패턴 추출 능력을 문장 분류와 의도 분류에 적용합니다.</p>
-    </a><a class="card" href="HTML/chapter12.html">
-      <b>CHAPTER 12</b><h3>태깅 작업(Tagging Task)</h3>
-      <p>문장의 각 토큰에 품사·개체명 등의 레이블을 부여하는 시퀀스 태깅을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter13.html">
-      <b>CHAPTER 13</b><h3>서브워드 토크나이저(Subword Tokenizer)</h3>
-      <p>희귀어와 미등록어 문제를 완화하는 서브워드 토큰화 기법을 정리합니다.</p>
-    </a><a class="card" href="HTML/chapter14.html">
-      <b>CHAPTER 14</b><h3>RNN을 이용한 인코더-디코더</h3>
-      <p>입력 시퀀스를 다른 출력 시퀀스로 변환하는 인코더-디코더 구조를 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter15.html">
-      <b>CHAPTER 15</b><h3>어텐션 메커니즘(Attention Mechanism)</h3>
-      <p>필요한 입력 위치에 가중치를 집중시키는 어텐션의 핵심 원리를 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter16.html">
-      <b>CHAPTER 16</b><h3>트랜스포머(Transformer)</h3>
-      <p>RNN 없이 Attention만으로 시퀀스를 처리하는 Transformer 구조를 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter17.html">
-      <b>CHAPTER 17</b><h3>BERT</h3>
-      <p>양방향 문맥을 학습하는 BERT의 사전학습 방식과 문장 임베딩 응용을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter18.html">
-      <b>CHAPTER 18</b><h3>실전! BERT 실습하기</h3>
-      <p>BERT 계열 모델을 분류·NER·기계독해·검색 문제에 적용하는 실습 중심 장입니다.</p>
-    </a><a class="card" href="HTML/chapter19.html">
-      <b>CHAPTER 19</b><h3>GPT(Generative Pre-trained Transformer)</h3>
-      <p>자기회귀 방식으로 다음 토큰을 생성하는 GPT 계열의 구조와 응용을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter20.html">
-      <b>CHAPTER 20</b><h3>사전 훈련된 인코더-디코더 모델</h3>
-      <p>입력 이해와 출력 생성을 결합한 BART·T5 계열 모델의 활용을 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter21.html">
-      <b>CHAPTER 21</b><h3>GPT-4 API 시작하기</h3>
-      <p>언어 모델 API를 프로그램에서 호출하고 서비스에 연결하는 기본 흐름을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter22.html">
-      <b>CHAPTER 22</b><h3>랭체인을 이용한 RAG 시작하기</h3>
-      <p>문서 검색 결과를 LLM 문맥에 결합하는 RAG 파이프라인과 LangChain 활용을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter23.html">
-      <b>CHAPTER 23</b><h3>RAG 성능을 올리는 기술</h3>
-      <p>검색 품질을 개선하기 위한 리랭킹과 HyDE 등의 RAG 고도화 기법을 학습합니다.</p>
-    </a><a class="card" href="HTML/chapter24.html">
-      <b>CHAPTER 24</b><h3>LLM 파인튜닝(LLM Fine-tuning)</h3>
-      <p>LoRA를 중심으로 LLM을 목적 데이터에 맞게 파인튜닝하고 평가·배포하는 흐름을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter25.html">
-      <b>CHAPTER 25</b><h3>VLM 파인튜닝(멀티모달 파인튜닝)</h3>
-      <p>텍스트와 이미지를 함께 처리하는 VLM을 LoRA로 파인튜닝하고 평가하는 방법을 다룹니다.</p>
-    </a><a class="card" href="HTML/chapter26.html">
-      <b>CHAPTER 26</b><h3>토픽 모델링(Topic Modeling)</h3>
-      <p>문서 집합에서 잠재 주제와 대표 키워드를 자동 추출하는 다양한 토픽 모델링 기법을 비교합니다.</p>
-    </a><a class="card" href="HTML/chapter27.html">
-      <b>CHAPTER 27</b><h3>질의 응답(QA) - LLM 이전</h3>
-      <p>LLM 이전에 사용되던 메모리 네트워크 기반 질의응답 구조를 이해합니다.</p>
-    </a><a class="card" href="HTML/chapter28.html">
-      <b>CHAPTER 28</b><h3>텍스트 요약(Text Summarization) - LLM 이전</h3>
-      <p>Attention과 TextRank를 이용한 전통적·신경망 기반 텍스트 요약 방식을 학습합니다.</p>
-    </a></div></section>
- <footer class="footer">
-  <p>출처 및 상세 학습: WikiDocs 「딥 러닝을 이용한 자연어 처리 입문 - RAG, 에이전트, LLM 파인튜닝까지」</p>
-  <p>이 사이트는 공개 목차를 기반으로 개념을 재서술한 학습용 요약이며 원문 전체를 복제하지 않습니다.</p>
- </footer>
-</main>
-</body></html>
+  <header class="index-top"><strong>NLP · LLM Learning Notes</strong></header>
+  <main class="index-wrap">
+    <section class="index-hero">
+      <span class="eyebrow">STATIC LEARNING SITE · WikiDocs Book 2155</span>
+      <h1>딥 러닝을 이용한<br>자연어 처리 입문</h1>
+      <p>자연어 처리 기초부터 딥러닝, Transformer, BERT·GPT, RAG, LLM/VLM 파인튜닝까지 학습 흐름을 장별·절별로 탐색할 수 있도록 재구성한 정적 웹사이트입니다.</p>
+      <div class="hero-tags"><span class="tag">Point #556B2F</span><span class="tag">28 Chapters</span><span
+          class="tag">Left Main Menu</span><span class="tag">Right Sub Menu</span></div>
+      <img src="Img/learning-flow.svg" alt="NLP 학습 흐름" style="width:100%;margin-top:30px;border-radius:12px">
+    </section>
+    <section style="margin-top:44px"><span class="eyebrow">CONTENTS</span>
+      <h2 style="font-size:28px;margin:6px 0">전체 장</h2>
+      <div class="index-grid"><a class="card" href="HTML/chapter01.html">
+          <b>CHAPTER 01</b>
+          <h3>자연어 처리 준비하기</h3>
+          <p>NLP 실습에 필요한 개발 환경과 데이터 처리 도구를 준비하는 장입니다.</p>
+        </a><a class="card" href="HTML/chapter02.html">
+          <b>CHAPTER 02</b>
+          <h3>텍스트 전처리(Text preprocessing)</h3>
+          <p>문장을 모델이 처리할 수 있는 입력으로 바꾸기 위한 전처리 기법을 정리합니다.</p>
+        </a><a class="card" href="HTML/chapter03.html">
+          <b>CHAPTER 03</b>
+          <h3>언어 모델(Language Model)</h3>
+          <p>문장의 확률을 계산하고 다음 단어를 예측하는 전통적 언어 모델의 원리를 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter04.html">
+          <b>CHAPTER 04</b>
+          <h3>카운트 기반의 단어 표현</h3>
+          <p>단어 출현 빈도를 기반으로 텍스트를 벡터화하는 대표적인 방법을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter05.html">
+          <b>CHAPTER 05</b>
+          <h3>벡터의 유사도(Vector Similarity)</h3>
+          <p>문서나 단어 벡터 간의 가까움과 차이를 수치로 측정하는 방법을 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter06.html">
+          <b>CHAPTER 06</b>
+          <h3>머신 러닝(Machine Learning) 개요</h3>
+          <p>NLP에 필요한 지도학습, 회귀, 분류, 벡터·행렬 연산의 기초를 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter07.html">
+          <b>CHAPTER 07</b>
+          <h3>딥 러닝(Deep Learning) 개요</h3>
+          <p>신경망의 구조와 학습 원리, 역전파, 과적합 방지 방법을 이해하는 장입니다.</p>
+        </a><a class="card" href="HTML/chapter08.html">
+          <b>CHAPTER 08</b>
+          <h3>순환 신경망(Recurrent Neural Network)</h3>
+          <p>순차 데이터 처리를 위한 RNN, LSTM, GRU 구조와 텍스트 생성을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter09.html">
+          <b>CHAPTER 09</b>
+          <h3>워드 임베딩(Word Embedding)</h3>
+          <p>단어 의미를 밀집 벡터로 표현하는 Word2Vec, GloVe, FastText 등 임베딩 기법을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter10.html">
+          <b>CHAPTER 10</b>
+          <h3>RNN을 이용한 텍스트 분류(Text Classification)</h3>
+          <p>RNN 계열 모델을 실제 텍스트 분류 문제에 적용하는 방법을 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter11.html">
+          <b>CHAPTER 11</b>
+          <h3>NLP를 위한 합성곱 신경망(CNN)</h3>
+          <p>CNN의 지역 패턴 추출 능력을 문장 분류와 의도 분류에 적용합니다.</p>
+        </a><a class="card" href="HTML/chapter12.html">
+          <b>CHAPTER 12</b>
+          <h3>태깅 작업(Tagging Task)</h3>
+          <p>문장의 각 토큰에 품사·개체명 등의 레이블을 부여하는 시퀀스 태깅을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter13.html">
+          <b>CHAPTER 13</b>
+          <h3>서브워드 토크나이저(Subword Tokenizer)</h3>
+          <p>희귀어와 미등록어 문제를 완화하는 서브워드 토큰화 기법을 정리합니다.</p>
+        </a><a class="card" href="HTML/chapter14.html">
+          <b>CHAPTER 14</b>
+          <h3>RNN을 이용한 인코더-디코더</h3>
+          <p>입력 시퀀스를 다른 출력 시퀀스로 변환하는 인코더-디코더 구조를 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter15.html">
+          <b>CHAPTER 15</b>
+          <h3>어텐션 메커니즘(Attention Mechanism)</h3>
+          <p>필요한 입력 위치에 가중치를 집중시키는 어텐션의 핵심 원리를 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter16.html">
+          <b>CHAPTER 16</b>
+          <h3>트랜스포머(Transformer)</h3>
+          <p>RNN 없이 Attention만으로 시퀀스를 처리하는 Transformer 구조를 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter17.html">
+          <b>CHAPTER 17</b>
+          <h3>BERT</h3>
+          <p>양방향 문맥을 학습하는 BERT의 사전학습 방식과 문장 임베딩 응용을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter18.html">
+          <b>CHAPTER 18</b>
+          <h3>실전! BERT 실습하기</h3>
+          <p>BERT 계열 모델을 분류·NER·기계독해·검색 문제에 적용하는 실습 중심 장입니다.</p>
+        </a><a class="card" href="HTML/chapter19.html">
+          <b>CHAPTER 19</b>
+          <h3>GPT(Generative Pre-trained Transformer)</h3>
+          <p>자기회귀 방식으로 다음 토큰을 생성하는 GPT 계열의 구조와 응용을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter20.html">
+          <b>CHAPTER 20</b>
+          <h3>사전 훈련된 인코더-디코더 모델</h3>
+          <p>입력 이해와 출력 생성을 결합한 BART·T5 계열 모델의 활용을 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter21.html">
+          <b>CHAPTER 21</b>
+          <h3>GPT-4 API 시작하기</h3>
+          <p>언어 모델 API를 프로그램에서 호출하고 서비스에 연결하는 기본 흐름을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter22.html">
+          <b>CHAPTER 22</b>
+          <h3>랭체인을 이용한 RAG 시작하기</h3>
+          <p>문서 검색 결과를 LLM 문맥에 결합하는 RAG 파이프라인과 LangChain 활용을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter23.html">
+          <b>CHAPTER 23</b>
+          <h3>RAG 성능을 올리는 기술</h3>
+          <p>검색 품질을 개선하기 위한 리랭킹과 HyDE 등의 RAG 고도화 기법을 학습합니다.</p>
+        </a><a class="card" href="HTML/chapter24.html">
+          <b>CHAPTER 24</b>
+          <h3>LLM 파인튜닝(LLM Fine-tuning)</h3>
+          <p>LoRA를 중심으로 LLM을 목적 데이터에 맞게 파인튜닝하고 평가·배포하는 흐름을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter25.html">
+          <b>CHAPTER 25</b>
+          <h3>VLM 파인튜닝(멀티모달 파인튜닝)</h3>
+          <p>텍스트와 이미지를 함께 처리하는 VLM을 LoRA로 파인튜닝하고 평가하는 방법을 다룹니다.</p>
+        </a><a class="card" href="HTML/chapter26.html">
+          <b>CHAPTER 26</b>
+          <h3>토픽 모델링(Topic Modeling)</h3>
+          <p>문서 집합에서 잠재 주제와 대표 키워드를 자동 추출하는 다양한 토픽 모델링 기법을 비교합니다.</p>
+        </a><a class="card" href="HTML/chapter27.html">
+          <b>CHAPTER 27</b>
+          <h3>질의 응답(QA) - LLM 이전</h3>
+          <p>LLM 이전에 사용되던 메모리 네트워크 기반 질의응답 구조를 이해합니다.</p>
+        </a><a class="card" href="HTML/chapter28.html">
+          <b>CHAPTER 28</b>
+          <h3>텍스트 요약(Text Summarization) - LLM 이전</h3>
+          <p>Attention과 TextRank를 이용한 전통적·신경망 기반 텍스트 요약 방식을 학습합니다.</p>
+        </a></div>
+    </section>
+    <footer class="footer">
+      <p>출처 및 상세 학습: 「딥 러닝을 이용한 자연어 처리 입문 - RAG, 에이전트, LLM 파인튜닝까지」</p>
+      <p>이 사이트는 공개 목차를 기반으로 개념을 재서술한 학습용 요약이며 원문 전체를 복제하지 않습니다.</p>
+    </footer>
+  </main>
+</body>
+
+</html>
